@@ -1,0 +1,17 @@
+package configuration.lesson9p149;
+
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.support.GenericApplicationContext;
+
+public class ShutDownHookBean implements ApplicationContextAware {
+
+	@Override
+	public void setApplicationContext(ApplicationContext ctx) throws BeansException {
+		if (ctx instanceof GenericApplicationContext) {
+			((GenericApplicationContext) ctx).registerShutdownHook();
+		}
+	}
+
+}

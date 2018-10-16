@@ -1,0 +1,29 @@
+<mapping>
+	<class name="remoteprocessing.lesson04p552.Contacts">
+		<field name="remoteprocessing.lesson04p552.Contacts" collection="arraylist">
+			<bind-xml name="contact" />
+		</field>
+	</class>
+	<class name="remoteprocessing.lesson04p552.Contact" identity="id">
+		<map-to xml="contact" />
+		<field name="id" type="long">
+			<bind-xml name="id" node="element" />
+		</field>
+		<field name="firstName" type="string">
+			<bind-xml name="firstName" node="element" />
+		</field>
+		<field name="lastName" type="string">
+			<bind-xml name="lastName" node="element" />
+		</field>
+		<field name="dibthDate" type="string" handler="dateHandler">
+			<bind-xml name="dibthDate" node="element" />
+		</field>
+		<field name="version" type="integer">
+			<bind-xml name="version" node="element" />
+		</field>
+	</class>
+	<field-handler name="dateHandler"
+		class="remoteprocessing.lesson04p552.DateTimeHandler">
+		<param name="date-format" value="yyyy-MM-dd" />
+	</field-handler>
+</mapping>

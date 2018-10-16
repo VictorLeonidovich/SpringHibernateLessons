@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="libs/javax/javax.persistence-api-2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/derby/derby.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-aop-4.3.12.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-beans-4.3.12.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-context-4.3.12.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-core-4.3.12.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-data-commons-1.13.8.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-data-jpa-1.11.8.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-expression-4.3.12.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-jdbc-4.3.12.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-orm-4.3.12.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/classmate-1.3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/commons-logging-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/el-api-2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/el-ri-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/hibernate-validator-5.4.1.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/jboss-logging-3.3.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/joda-time-2.9.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/validation-api-2.0.1.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/slf4j-api-1.7.25.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/google/guava-23.6-jre.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/antlr-2.7.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/classmate-1.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/hibernate-commons-annotations-5.0.1.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/hibernate-core-5.2.12.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/jandex-2.0.3.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/javassist-3.20.0-GA.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/jboss-logging-3.3.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/required/jboss-transaction-api_1.2_spec-1.0.1.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-tx-4.3.12.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/usertype.core-6.0.0.GA.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/usertype.spi-6.0.0.GA.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/hibernate/lib/jpa-metamodel-generator/hibernate-jpamodelgen-5.2.12.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/jcl-over-slf4j-1.7.25.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/log4j-1.2.17.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/slf4j-log4j12-1.7.25.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-web-4.3.12.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/other/httpclient-4.5.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/spring/spring-webmvc-4.3.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/jms/hornetq-jms-client-2.4.0.Final.jar"/>
+	<classpathentry kind="lib" path="libs/jms/jackson-mapper-lgpl-1.9.13.jar"/>
+	<classpathentry kind="lib" path="libs/spring/spring-jms-4.3.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring/spring-messaging-4.3.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/activemq/activemq-core-5.7.0.jar"/>
+	<classpathentry kind="lib" path="libs/activemq/activemq-protobuf-1.1.jar"/>
+	<classpathentry kind="lib" path="libs/activemq/kahadb-5.7.0.jar"/>
+	<classpathentry kind="lib" path="libs/other/management-api-1.1-rev-1.jar"/>
+	<classpathentry kind="lib" path="libs/hornetq/hornetq-commons-2.4.0.Final.jar"/>
+	<classpathentry kind="lib" path="libs/hornetq/hornetq-core-client-2.4.0.Final.jar"/>
+	<classpathentry kind="lib" path="libs/hornetq/hornetq-jms-client-2.4.0.Final.jar"/>
+	<classpathentry kind="lib" path="libs/hornetq/hornetq-jms-server-2.4.0.Final.jar"/>
+	<classpathentry kind="lib" path="libs/hornetq/hornetq-journal-2.4.0.Final.jar"/>
+	<classpathentry kind="lib" path="libs/hornetq/hornetq-native-2.4.0.Final.jar"/>
+	<classpathentry kind="lib" path="libs/hornetq/hornetq-server-2.4.0.Final.jar"/>
+	<classpathentry kind="lib" path="libs/other/netty-all-4.0.25.Final.jar"/>
+	<classpathentry kind="lib" path="libs/jms/javax.jms-api-2.0.jar"/>
+	<classpathentry kind="lib" path="libs/xml/castor-xml-1.4.1.jar"/>
+	<classpathentry kind="lib" path="libs/spring/spring-oxm-4.3.12.RELEASE.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

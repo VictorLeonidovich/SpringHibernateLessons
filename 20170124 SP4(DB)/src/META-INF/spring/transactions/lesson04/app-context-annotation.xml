@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="dataSourceA" class="com.atomikos.jdbc.AtomikosDataSourceBean"
+		init-method="init" destroy-method="close">
+		<property name="uniqueResourceName" value="XADBMSA" />
+		<property name="xaDataSourceClassName" value="org.apache.derby.jdbc.EmbeddedXADataSource" />
+		<property name="xaProperties">
+			<props>
+				<prop key="databaseName">prospringa</prop>
+				<prop key="user">aaa</prop>
+				<prop key="password"></prop>
+			</props>
+		</property>
+		<property name="poolSize" value="1" />
+	</bean>
+
+	<bean id="dataSourceB" class="com.atomikos.jdbc.AtomikosDataSourceBean"
+		init-method="init" destroy-method="close">
+		<property name="uniqueResourceName" value="XADBMSB" />
+		<property name="xaDataSourceClassName" value="org.apache.derby.jdbc.EmbeddedXADataSource" />
+		<property name="xaProperties">
+			<props>
+				<prop key="databaseName">prospringb</prop>
+				<prop key="user">bbb</prop>
+				<prop key="password"></prop>
+			</props>
+		</property>
+		<property name="poolSize" value="1" />
+	</bean>
+
+	<bean id="emfBean"
+	class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+	abstract="true">
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+		<property name="packagesToScan" value="transactions.lesson04p480" />
+		<property name="jpaProperties">
+			<props>
+			<prop key="hibernate.transaction.coordinator_class">org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl</prop>
+				
+				
+				<prop key="hibernate.dialect">org.hibernate.dialect.DerbyDialect</prop>
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">10</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="propagationBehaviorName" value="PROPAGATION_NEVER" />
+		<property name="timeout" value="30" />
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+		p:entityManagerFactory-ref="emf" />
+
+
+
+	<context:component-scan base-package="transactions.lesson03p475" />
+
+	<jpa:repositories base-package="transactions.lesson03p475"
+		entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager" />
+
+</beans>

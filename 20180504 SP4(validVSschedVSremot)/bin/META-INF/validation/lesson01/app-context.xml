@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/jdbc
+http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<context:annotation-config />
+	<context:property-placeholder
+		location="classpath:META-INF/validation/lesson01/application.properties" />
+
+	<bean id="custonEditorConfigurer"
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer"
+		p:propertyEditorRegistrars-ref="propertyEditorRegistrarsList" />
+
+	<util:list id="propertyEditorRegistrarsList">
+		<bean class="validation.lesson01p489.DateTimeEditorRegistrar">
+			<constructor-arg value="${date.format.pattern}" />
+		</bean>
+	</util:list>
+
+	<bean id="chris" class="validation.lesson01p489.Contact"
+		p:firstName="Chris"
+		p:lastName="Schaefer"
+		p:birthDate="1981-05-03"
+		p:personalSite="http://www.dtgz.com" />
+
+	<bean id="myContact" class="validation.lesson01p489.Contact"
+		p:firstName="${myContact.firstName}"
+		p:lastName="${myContact.lastName}"
+		p:birthDate="${myContact.birthDate}"
+		p:personalSite="${myContact.personalSite}" />
+
+</beans>
